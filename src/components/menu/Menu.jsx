@@ -20,18 +20,15 @@ function Menu() {
       )}
       <aside className={open ? "header__menu__overlay" : "header__menu__overlay hidden"}>
         <nav className="header__menu__overlay__container">
-          <ul className="header__menu__overlay__links">
+          <ul className="header__menu__overlay__links" onClick={() => setOpen(false)}>
             <li>
-              <a href="#">About</a>
+              <a href="#about">About</a>
             </li>
             <li>
-              <a href="#">Experience</a>
+              <a href="#projects">Projects</a>
             </li>
             <li>
-              <a href="#">Projects</a>
-            </li>
-            <li>
-              <a href="#">Contact</a>
+              <a href="#contact">Contact</a>
             </li>
           </ul>
           <div>
