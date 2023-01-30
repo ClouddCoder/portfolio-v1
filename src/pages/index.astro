@@ -1,36 +1,73 @@
 ---
-// Component Imports
-import Counter from '../components/Counter';
-const someProps = {
-	count: 0,
-};
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/core-concepts/astro-components/
+import Navbar from "../components/Navbar.astro";
+import Menu from "../components/menu/Menu";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<style>
-			html,
-			body {
-				font-family: system-ui;
-				margin: 0;
-			}
-			body {
-				padding: 2rem;
-			}
-		</style>
-	</head>
-	<body>
-		<main>
-			<Counter {...someProps} client:visible>
-				<h1>Hello, React!</h1>
-			</Counter>
-		</main>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <style>
+      * :global(*) {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html :global(li) {
+        list-style: none;
+      }
+
+      html :global(a) {
+        text-decoration: none;
+      }
+
+      html,
+      body {
+        height: 100%;
+        width: 100%;
+      }
+
+      body {
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      header {
+        width: 100%;
+        padding: 0 40px;
+      }
+
+      .header__navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100px;
+      }
+
+      main {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="header__navbar">
+        <div>Logo</div>
+        <Navbar />
+        <Menu client:visible />
+      </nav>
+    </header>
+    <main>Hola mundo</main>
+    <footer>
+      <p>My Site</p>
+    </footer>
+  </body>
 </html>

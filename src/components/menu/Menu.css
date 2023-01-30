@@ -1,0 +1,43 @@
+/* For mobile phones */
+#toggle-button {
+  position: relative;
+  z-index: 6;
+}
+
+.header__menu__overlay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100vh;
+  box-shadow: 0 0 10px var(--color-primary-brown);
+  background-color: var(--color-primary-white);
+  -webkit-font-smoothing: antialiased;
+  transform-origin: 0% 0%;
+  transform: translate(0, 0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+  z-index: 5;
+}
+
+.header__menu__overlay__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.hidden {
+  transform: translate(100%, 0);
+}
+
+/* For desktop and large devices */
+@media only screen and (min-width: 992px) {
+  .header__menu {
+    display: none;
+  }
+}
