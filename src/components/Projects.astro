@@ -1,18 +1,102 @@
+---
+import Ecommerce from "../src/assets/ecommerce.png";
+---
+
 <style>
   #projects {
+    max-width: 1000px;
     padding: 60px 0;
   }
 
-  .container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+  h2 {
+    text-align: center;
   }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .project {
+    width: 100%;
+    padding: 0.75rem;
+  }
+
+  figure {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+    transition: all 0.45s ease-in-out;
+  }
+
+  figurecaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f2ca52;
+    transition: all 0.45s ease-out;
+    z-index: 1;
+  }
+
+  figurecaption div {
+    padding: 0 auto;
+  }
+
+  figurecaption h1 {
+    text-align: center;
+  }
+
+  figurecaption:hover {
+    opacity: 1;
+  }
+
+  /* For tablets */
+  @media only screen and (min-width: 768px) {
+    .project {
+      width: 50%;
+    }
+  }
+
+  /* For desktop and large devices */
 </style>
 
 <section id="projects">
   <h2>Projects</h2>
   <div class="container">
-    <div>Ecommerce</div>
-    <div>Another</div>
+    <div class="project">
+      <figure>
+        <img src={Ecommerce} alt="ecommerce" />
+        <figurecaption>
+          <div>
+            <h1>Lottus</h1>
+            <h1>Small Ecommerce built with PERN stack and developed with docker.</h1>
+          </div>
+        </figurecaption>
+      </figure>
+    </div>
+    <div class="project">
+      <figure>
+        <img src={Ecommerce} alt="ecommerce" />
+        <figurecaption>
+          <div>
+            <h1>Lottus</h1>
+            <h1>Small Ecommerce built with PERN stack and developed with docker.</h1>
+          </div>
+        </figurecaption>
+      </figure>
+    </div>
   </div>
 </section>

@@ -1,15 +1,41 @@
 <style>
   #about {
     padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+  }
+
+  .about-me {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .my-skills-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
   }
 
   .my-skills-list {
     display: flex;
+  }
+
+  @media only screen and (max-width: 768px) {
+    .container {
+      display: flex;
+      flex-direction: column;
+      column-gap: 50px;
+      row-gap: 50px;
+    }
   }
 </style>
 
@@ -27,12 +53,17 @@
         spending time with my family.
       </p>
     </div>
-    <ul class="my-skills-list">
-      <li>HTML5</li>
-      <li>CSS3</li>
-      <li>JavaScript</li>
-      <li>PHP</li>
-      <li>MySQL</li>
-    </ul>
+    <div class="my-skills-container">
+      <h3>My skills</h3>
+      <ul class="my-skills-list">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Node</li>
+        <li>Python</li>
+        <li>PHP</li>
+      </ul>
+    </div>
   </div>
 </section>

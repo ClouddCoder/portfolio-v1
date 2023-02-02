@@ -6,45 +6,96 @@ import About from "../components/About.astro";
 import Projects from "../components/Projects.astro";
 ---
 
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  h2 {
+    font-size: clamp(1.625rem, 5vw, 2rem);
+    color: #a68d60;
+  }
+
+  p {
+    font-size: clamp(0.875rem, 5vw, 1.25rem);
+    line-height: 1.5;
+    color: #f2f2f2;
+  }
+
+  a {
+    text-decoration: none;
+    transition: color 0.4s ease;
+    color: #a68d60;
+  }
+
+  a:hover {
+    color: #f2ca52;
+  }
+</style>
+
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
+
     <style>
-      * :global(*) {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+      html {
+        scroll-behavior: smooth;
       }
 
-      html :global(li) {
-        list-style: none;
-      }
-
-      html :global(a) {
-        text-decoration: none;
-      }
-
-      html,
-      body {
+      html {
         height: 100%;
         width: 100%;
       }
 
       body {
-        min-height: 100vh;
+        width: 100%;
+        min-height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+        background: #0d0d0d;
+      }
+
+      .container {
+        min-height: 100%;
       }
 
       header {
         position: fixed;
         top: 0;
         width: 100%;
-        padding: 0 40px;
+        max-width: 1600px;
+        z-index: 100;
+        background: rgba(13, 13, 13, 0.85);
+        backdrop-filter: blur(10px);
+        transform-origin: 0% 0%;
+        transform: translate(0, 0);
+        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+        display: flex;
+        justify-content: center;
+      }
+
+      .header-hidden {
+        transform: translate(0, -100%);
+      }
+
+      .header__container {
+        width: 90%;
+        height: 100%;
+        background: inerit;
       }
 
       .header__navbar {
@@ -60,21 +111,40 @@ import Projects from "../components/Projects.astro";
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        max-width: 1600px;
+        max-width: 1200px;
       }
 
       main :global(section) {
         width: 90%;
       }
+
+      footer {
+        display: flex;
+        justify-content: center;
+      }
+
+      footer .inner {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px 0;
+      }
+
+      footer .inner p {
+        font-size: 12px;
+      }
     </style>
   </head>
   <body>
     <header>
-      <nav class="header__navbar">
-        <div>Logo</div>
-        <Navbar />
-        <Menu client:visible />
-      </nav>
+      <div class="header__container">
+        <nav class="header__navbar">
+          <div>Logo</div>
+          <Navbar />
+          <Menu client:visible />
+        </nav>
+      </div>
     </header>
     <main>
       <Hero />
@@ -82,7 +152,12 @@ import Projects from "../components/Projects.astro";
       <Projects />
     </main>
     <footer>
-      <p>My Site</p>
+      <div class="inner">
+        <p>Developed and designed by Brayan Sánchez</p>
+        <p>© Copyrigth 2023</p>
+      </div>
     </footer>
   </body>
 </html>
+
+<script src="../scripts/index.js"></script>

@@ -5,15 +5,37 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: 15px;
+  }
+
+  p {
+    max-width: 500px;
+    line-height: 1.3;
+    color: #f2f2f2;
+  }
+
+  h1 {
+    font-size: clamp(1.125rem, 5vw, 1.25rem);
+    color: #f2ca52;
+  }
+
+  .my-name {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+  }
+
+  h3 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    color: #f2f2f2;
   }
 </style>
 
 <section class="hero">
   <h1>Hi, my name is</h1>
-  <h2>Brayan Sanchez.</h2>
-  <h3>I build things for the web.</h3>
+  <h2 class="my-name">Brayan Sanchez.</h2>
+  <h3>I learn every day to be better.</h3>
   <p>
-    I'm a junior frontend developer focused on learning new technologies to create new things. Cloud
-    Computing and Crypto fan.
+    I'm a junior front-end developer focused on learning new technologies to be able to build better
+    and more efficient web applications. Currently I'm improving my skills in React with PERN stack
+    to get knowledge in the backend and database management.
   </p>
 </section>

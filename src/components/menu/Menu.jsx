@@ -10,12 +10,16 @@ function Menu() {
   return (
     <div className="header__menu">
       {open ? (
-        <button id="toggle-button" onClick={() => setOpen(false)}>
-          Cerrar
+        <button className="toggle-button close" onClick={() => setOpen(false)}>
+          <div></div>
+          <div></div>
+          <div></div>
         </button>
       ) : (
-        <button id="toggle-button" onClick={() => setOpen(true)}>
-          Abrir
+        <button className="toggle-button" onClick={() => setOpen(true)}>
+          <div></div>
+          <div></div>
+          <div></div>
         </button>
       )}
       <aside className={open ? "header__menu__overlay" : "header__menu__overlay hidden"}>
@@ -32,7 +36,7 @@ function Menu() {
             </li>
           </ul>
           <div>
-            <button>Resume</button>
+            <button className="button-resume">Resume</button>
           </div>
         </nav>
       </aside>
