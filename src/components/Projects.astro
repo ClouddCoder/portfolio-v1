@@ -4,9 +4,12 @@ import Encriptador from "../src/assets/encriptador.png";
 ---
 
 <style>
+  /* For mobile phones */
   #projects {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     max-width: 1000px;
-    padding: 60px 0;
   }
 
   h2 {
@@ -14,11 +17,9 @@ import Encriptador from "../src/assets/encriptador.png";
   }
 
   .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 300px;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
   }
 
   .project {
@@ -51,7 +52,7 @@ import Encriptador from "../src/assets/encriptador.png";
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #f2ca52;
+    background: var(--secondary-color);
     transition: all 0.45s ease-out;
     z-index: 1;
   }
@@ -68,14 +69,12 @@ import Encriptador from "../src/assets/encriptador.png";
     opacity: 1;
   }
 
-  /* For tablets */
+  /* For tablets, desktop and large devices */
   @media only screen and (min-width: 768px) {
-    .project {
-      width: 45%;
+    .container {
+      grid-template-columns: 1fr 1fr;
     }
   }
-
-  /* For desktop and large devices */
 </style>
 
 <section id="projects" class="hidden">
