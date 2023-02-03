@@ -37,7 +37,7 @@ function Menu() {
           <div></div>
         </button>
       )}
-      <aside className={open ? "header__menu__overlay" : "header__menu__overlay hidden"}>
+      <aside className={open ? "header__menu__overlay" : "header__menu__overlay isHidden"}>
         <nav className="header__menu__overlay__container">
           <ul className="header__menu__overlay__links" onClick={() => setOpen(false)}>
             <li>

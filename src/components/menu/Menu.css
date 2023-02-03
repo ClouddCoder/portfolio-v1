@@ -79,7 +79,7 @@
   width: 100%;
 }
 
-.hidden {
+.isHidden {
   transform: translate(100%, 0);
 }
 

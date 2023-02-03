@@ -1,5 +1,6 @@
 ---
 import Ecommerce from "../src/assets/ecommerce.png";
+import Encriptador from "../src/assets/encriptador.png";
 ---
 
 <style>
@@ -14,11 +15,15 @@ import Ecommerce from "../src/assets/ecommerce.png";
 
   .container {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    height: 300px;
   }
 
   .project {
     width: 100%;
+    height: 100%;
     padding: 0.75rem;
   }
 
@@ -66,14 +71,14 @@ import Ecommerce from "../src/assets/ecommerce.png";
   /* For tablets */
   @media only screen and (min-width: 768px) {
     .project {
-      width: 50%;
+      width: 45%;
     }
   }
 
   /* For desktop and large devices */
 </style>
 
-<section id="projects">
+<section id="projects" class="hidden">
   <h2>Projects</h2>
   <div class="container">
     <div class="project">
@@ -89,11 +94,11 @@ import Ecommerce from "../src/assets/ecommerce.png";
     </div>
     <div class="project">
       <figure>
-        <img src={Ecommerce} alt="ecommerce" />
+        <img src={Encriptador} alt="encriptador" />
         <figurecaption>
           <div>
-            <h1>Lottus</h1>
-            <h1>Small Ecommerce built with PERN stack and developed with docker.</h1>
+            <h1>Encriptador</h1>
+            <h1>Encrypts the input of the user.</h1>
           </div>
         </figurecaption>
       </figure>
