@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Menu.css";
 
 /**
@@ -7,6 +7,21 @@ import "./Menu.css";
  */
 function Menu() {
   const [open, setOpen] = useState(false);
+
+  const blurMainContent = () => {
+    const body = document.querySelector("body");
+
+    if (open) {
+      body.classList.add("blur");
+    } else {
+      body.classList.remove("blur");
+    }
+  };
+
+  useEffect(() => {
+    blurMainContent();
+  }, [open]);
+
   return (
     <div className="header__menu">
       {open ? (
