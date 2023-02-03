@@ -5,6 +5,8 @@ import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Projects from "../components/Projects.astro";
 import ResumeButton from "../components/ResumeButton.astro";
+import SocialMediaBar from "../components/SocialMediaBar.astro";
+import SocialMediaFooter from "../components/SocialMediaFooter.astro";
 ---
 
 <style is:global>
@@ -31,14 +33,14 @@ import ResumeButton from "../components/ResumeButton.astro";
   }
 
   /* For tablets */
-  @media only screen and (max-width: 768px) {
+  @media only screen and (min-width: 768px) {
     section {
       padding: 80px 0;
     }
   }
 
   /* For desktop and large devices */
-  @media only screen and (max-width: 992px) {
+  @media only screen and (min-width: 992px) {
     section {
       padding: 100px 0;
     }
@@ -74,7 +76,8 @@ import ResumeButton from "../components/ResumeButton.astro";
     }
   }
 
-  .hero-field {
+  .hero-field,
+  .social-media-bar {
     transition-delay: calc(100ms * var(--order));
   }
 
@@ -125,7 +128,7 @@ import ResumeButton from "../components/ResumeButton.astro";
         max-width: 1600px;
         z-index: 100;
         background: rgba(13, 13, 13, 0.85);
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(5px);
         transform-origin: 0% 0%;
         transform: translate(0, 0);
         transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
@@ -159,6 +162,20 @@ import ResumeButton from "../components/ResumeButton.astro";
         max-width: 1200px;
         width: 90%;
         transition: all 0.25s;
+      }
+
+      /* For tablets */
+      @media only screen and (min-width: 768px) {
+        main {
+          padding: 0 40px;
+        }
+      }
+
+      /* For desktop and large devices */
+      @media only screen and (min-width: 992px) {
+        main {
+          padding: 0 50px;
+        }
       }
 
       .blur main,
@@ -196,6 +213,7 @@ import ResumeButton from "../components/ResumeButton.astro";
         </nav>
       </div>
     </header>
+    <SocialMediaBar />
     <main>
       <Hero />
       <About />
@@ -203,6 +221,7 @@ import ResumeButton from "../components/ResumeButton.astro";
     </main>
     <footer>
       <div class="inner hidden">
+        <SocialMediaFooter />
         <p>Developed and designed by Brayan Sánchez</p>
         <p>© Copyrigth 2023</p>
       </div>

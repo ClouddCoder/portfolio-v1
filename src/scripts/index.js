@@ -26,7 +26,7 @@ const oberserver = new IntersectionObserver(
       }
     });
   },
-  { threshold: 0.9 },
+  { rootMargin: "0px", threshold: 0.1 },
 );
 
 const hiddenElements = document.querySelectorAll(".hidden");
