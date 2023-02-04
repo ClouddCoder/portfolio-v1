@@ -61,7 +61,7 @@
   width: 70%;
   height: 100vh;
   box-shadow: 0 0 10px var(--color-primary-brown);
-  background: var(--color-primary-white);
+  background: var(--main-color);
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
   transform: translate(0, 0);
