@@ -6,5 +6,6 @@ export default defineConfig({
   // Enable React to support React JSX components.
   integrations: [react()],
 
-  site: "https://clouddcoder.github.io/portfolio",
+  site: "https://clouddcoder.github.io",
+  base: "/portfolio",
 });
