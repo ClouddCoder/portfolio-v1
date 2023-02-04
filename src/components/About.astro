@@ -1,14 +1,14 @@
 <style>
   #about {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 50px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .about-me {
@@ -20,16 +20,23 @@
   .my-skills-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    gap: 10px;
+    gap: 20px;
   }
 
   .my-skills-list {
     display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .my-skills-list div {
+    background: var(--secondary-color);
+    border-radius: 5px;
+    padding: 1rem 2rem;
   }
 
   @media only screen and (max-width: 768px) {
-    .container {
+    #about {
       display: flex;
       flex-direction: column;
       column-gap: 50px;
@@ -39,30 +46,39 @@
 </style>
 
 <section id="about" class="hidden">
-  <h2>About me</h2>
   <div class="container">
+    <h2>About me</h2>
     <div class="about-me">
       <p>
-        Hi, I'm <strong>John Doe</strong>, a freelance web designer from New York. I have over 10
-        years of experience in the industry. I specialize in creating stylish, modern websites that
-        are fast, secure, and easy to use. I also have a passion for branding and print design.
+        Hi, I'm <strong>Brayan</strong>, a systems engineering student and <strong>
+          self-taught
+        </strong> programmer from Colombia. I have over 2 years of experience at programming and for
+        the last 7 months I've been doing some projects to build my portfolio. I'm also learning about
+        <strong>GCP</strong>, <strong>Java</strong> and later will start with <strong>AWS</strong>.
+        I'm currently looking for a job as a junior developer.
       </p>
       <p>
-        When I'm not behind a computer, you can find me playing video games, watching movies, or
-        spending time with my family.
+        When I want to relax I like to play video games, watch movies, read articles about news and
+        tecnhology to keep me updated.
       </p>
     </div>
-    <div class="my-skills-container">
-      <h3>My skills</h3>
-      <ul class="my-skills-list">
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>React</li>
-        <li>Node</li>
-        <li>Python</li>
-        <li>PHP</li>
-      </ul>
+  </div>
+  <div class="container">
+    <h2>My skills</h2>
+    <div class="my-skills-list">
+      <div>HTML</div>
+      <div>CSS</div>
+      <div>JavaScript</div>
+      <div>React</div>
+      <div>Material UI</div>
+      <div>Jest</div>
+      <div>Node</div>
+      <div>PostgreSQL</div>
+      <div>REST</div>
+      <div>Linux</div>
+      <div>Docker</div>
+      <div>Git</div>
+      <div>GitHub</div>
     </div>
   </div>
 </section>
