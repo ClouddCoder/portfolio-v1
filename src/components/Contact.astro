@@ -1,0 +1,35 @@
+<style>
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100px;
+  }
+</style>
+
+<section id="contact">
+  <h2>Get it touch</h2>
+  <form action="https://formsubmit.co/leon16.bs@gmail.com" method="POST">
+    <input type="text" name="name" placeholder="Your name" required />
+    <input type="email" name="email" placeholder="Your email" required />
+    <textarea name="message" placeholder="Message" required></textarea>
+    <input type="hidden" name="_subject" value="New submission!" />
+    <button type="submit">Send</button>
+  </form>
+</section>
