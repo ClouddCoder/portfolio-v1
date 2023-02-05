@@ -23,18 +23,16 @@ window.onresize = function () {
 };
 
 // Scroll animation.
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      } else {
-        entry.target.classList.remove("show");
-      }
-    });
-  },
-  { root: null, rootMargin: "0px", threshold: [0, 0.2] },
-);
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    // intersectionRatio works better than isIntersecting, it avoids toggling the class multiple times.
+    if (entry.intersectionRatio > 0) {
+      entry.target.classList.add("show");
+    } else {
+      entry.target.classList.remove("show");
+    }
+  });
+});
 
 const hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((el) => observer.observe(el));
