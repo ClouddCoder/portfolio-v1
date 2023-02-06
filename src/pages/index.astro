@@ -8,90 +8,109 @@ import Contact from "../components/Contact.astro";
 import ResumeButton from "../components/ResumeButton.astro";
 import SocialMediaBar from "../components/SocialMediaBar.astro";
 import SocialMediaFooter from "../components/SocialMediaFooter.astro";
+import "../styles/global.css";
 ---
 
-<style is:global>
-  :root {
-    --main-color: #0d0d0d;
-    --secondary-color: #f2ca52;
-    --subtitle-color: #a68d60;
-    --fc-paragraph: #f2f2f2;
+<style>
+  html {
+    scroll-behavior: smooth;
   }
 
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Inter", sans-serif;
-  }
-
-  strong {
-    color: var(--secondary-color);
-  }
-
-  li {
-    list-style: none;
-  }
-
-  section {
-    padding: 60px 0;
+  html {
+    height: 100%;
     width: 100%;
+  }
+
+  body {
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--main-color);
+  }
+
+  .container {
+    min-height: 100%;
+  }
+
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    max-width: 1600px;
+    z-index: 100;
+    background: rgba(13, 13, 13, 0.85);
+    backdrop-filter: blur(5px);
+    transform-origin: 0% 0%;
+    transform: translate(0, 0);
+    transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
+    display: flex;
+    justify-content: center;
+  }
+
+  .header-hidden {
+    transform: translate(0, -100%);
+  }
+
+  .header__container {
+    width: 90%;
+    height: 100%;
+    background: inerit;
+  }
+
+  .header__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+  }
+
+  main {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    width: 90%;
+    transition: all 0.25s;
   }
 
   /* For tablets */
   @media only screen and (min-width: 768px) {
-    section {
-      padding: 80px 0;
+    main {
+      padding: 0 40px;
     }
   }
 
   /* For desktop and large devices */
   @media only screen and (min-width: 992px) {
-    section {
-      padding: 100px 0;
+    main {
+      padding: 0 50px;
     }
   }
 
-  h2 {
-    font-size: clamp(1.625rem, 5vw, 2rem);
-    color: var(--subtitle-color);
+  .blur main,
+  .blur footer {
+    filter: blur(5px) brightness(0.7);
   }
 
-  p {
-    font-size: clamp(0.875rem, 5vw, 1.25rem);
-    line-height: 1.5;
-    color: var(--fc-paragraph);
+  footer {
+    display: flex;
+    justify-content: center;
   }
 
-  a {
-    font-size: clamp(0.875rem, 5vw, 1rem);
-    text-decoration: none;
-    transition: color 0.4s ease;
-    color: var(--subtitle-color);
+  footer .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
   }
 
-  a:hover {
-    color: var(--secondary-color);
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    .hidden {
-      opacity: 0;
-      filter: blur(5px);
-      transform: translateX(-5%);
-      transition: all 0.5s;
-    }
-  }
-
-  .hero-field,
-  .side-social-media {
-    transition-delay: calc(100ms * var(--order));
-  }
-
-  .show {
-    filter: blur(0);
-    transform: translateX(0);
-    opacity: 1;
+  footer .inner p {
+    font-size: 12px;
   }
 </style>
 
@@ -104,109 +123,6 @@ import SocialMediaFooter from "../components/SocialMediaFooter.astro";
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet" />
-
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-
-      html {
-        height: 100%;
-        width: 100%;
-      }
-
-      body {
-        width: 100%;
-        min-height: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background: var(--main-color);
-      }
-
-      .container {
-        min-height: 100%;
-      }
-
-      header {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        max-width: 1600px;
-        z-index: 100;
-        background: rgba(13, 13, 13, 0.85);
-        backdrop-filter: blur(5px);
-        transform-origin: 0% 0%;
-        transform: translate(0, 0);
-        transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
-        display: flex;
-        justify-content: center;
-      }
-
-      .header-hidden {
-        transform: translate(0, -100%);
-      }
-
-      .header__container {
-        width: 90%;
-        height: 100%;
-        background: inerit;
-      }
-
-      .header__navbar {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100px;
-      }
-
-      main {
-        flex: 1 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        max-width: 1200px;
-        width: 90%;
-        transition: all 0.25s;
-      }
-
-      /* For tablets */
-      @media only screen and (min-width: 768px) {
-        main {
-          padding: 0 40px;
-        }
-      }
-
-      /* For desktop and large devices */
-      @media only screen and (min-width: 992px) {
-        main {
-          padding: 0 50px;
-        }
-      }
-
-      .blur main,
-      .blur footer {
-        filter: blur(5px) brightness(0.7);
-      }
-
-      footer {
-        display: flex;
-        justify-content: center;
-      }
-
-      footer .inner {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 20px 0;
-      }
-
-      footer .inner p {
-        font-size: 12px;
-      }
-    </style>
   </head>
   <body>
     <header>
