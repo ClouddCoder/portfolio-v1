@@ -30,12 +30,18 @@
   }
 
   input {
+    color: var(--fc-paragraph);
+    background: var(--main-color);
+    border: 1px solid var(--fc-paragraph);
     border-radius: 5px;
     padding: 15px;
     font-size: clamp(0.875rem, 5vw, 1rem);
   }
 
   textarea {
+    color: var(--fc-paragraph);
+    background: var(--main-color);
+    border: 1px solid var(--fc-paragraph);
     border-radius: 5px;
     padding: 15px;
     width: 100%;
@@ -93,8 +99,9 @@
     <form action="https://formsubmit.co/leon16.bs@gmail.com" method="POST">
       <input type="text" name="name" placeholder="Your name" required />
       <input type="email" name="email" placeholder="Your email" required />
-      <textarea name="message" placeholder="Message" required></textarea>
       <input type="hidden" name="_subject" value="New submission!" />
+      <input type="hidden" name="_next" value="https://clouddcoder.github.io/portfolio/Thanks" />
+      <textarea name="message" placeholder="Message" required></textarea>
       <div class="container-button">
         <button type="submit">Send</button>
       </div>

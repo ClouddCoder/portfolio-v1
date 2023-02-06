@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<style>
+  main {
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1000px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  h1 {
+    font-size: clamp(4rem, 8vw, 10rem);
+    font-weight: 900;
+    color: var(--subtitle-color);
+  }
+
+  p {
+    text-align: center;
+  }
+
+  a {
+    border: solid 1px var(--secondary-color);
+    background: transparent;
+    color: var(--secondary-color);
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  a:hover {
+    background: rgba(242, 202, 82, 0.2);
+  }
+</style>
+
+<Layout>
+  <main>
+    <div class="container">
+      <h1>Thanks!</h1>
+      <p>The form was submitted successfully.</p>
+      <p>You may return to the homepage.</p>
+      <a href="/">Go to homepage</a>
+    </div>
+  </main>
+</Layout>
