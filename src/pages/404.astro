@@ -1,0 +1,83 @@
+---
+import Layout from "../layouts/Layout.astro";
+---
+
+<style>
+  /* For mobile phones and tablets */
+  main {
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .container {
+    width: 90%;
+    max-width: 1000px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 20px;
+  }
+
+  h1 {
+    font-size: 10rem;
+    font-weight: 900;
+    color: var(--secondary-color);
+  }
+
+  #horizontal-line {
+    border: 4px solid var(--secondary-color);
+    width: 100%;
+  }
+
+  #vertical-line {
+    display: none;
+  }
+
+  #content {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+  }
+
+  a {
+    color: var(--secondary-color);
+    font-size: clamp(0.875rem, 5vw, 1.25rem);
+  }
+
+  /* For desktop and large devices */
+  @media only screen and (min-width: 992px) {
+    .container {
+      flex-direction: row;
+      row-gap: 0;
+      column-gap: 20px;
+    }
+
+    #horizontal-line {
+      display: none;
+    }
+
+    #vertical-line {
+      display: block;
+      border: 4px solid var(--secondary-color);
+      height: 11rem;
+    }
+  }
+</style>
+
+<Layout>
+  <main>
+    <div class="container">
+      <h1>404</h1>
+      <div id="vertical-line"></div>
+      <div id="horizontal-line"></div>
+      <div id="content">
+        <p>Umm, yes. This is an error.</p>
+        <p>We tried to find the page you were looking for, but we couldn't. Sorry about that.</p>
+        <p>You may find what you're looking for on the <a href="/">homepage</a>.</p>
+      </div>
+    </div>
+  </main>
+</Layout>
