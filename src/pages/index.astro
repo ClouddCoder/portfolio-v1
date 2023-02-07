@@ -1,4 +1,5 @@
 ---
+import Logo from "/public/logo.svg";
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Menu from "../components/menu/Menu";
@@ -96,7 +97,11 @@ import SocialMediaFooter from "../components/SocialMediaFooter.astro";
   <header>
     <div class="header__container">
       <nav class="header__navbar">
-        <div>Logo</div>
+        <div>
+          <a href="/portfolio">
+            <img src={Logo} alt="logo" />
+          </a>
+        </div>
         <Navbar />
         <Menu client:visible>
           <ResumeButton />
