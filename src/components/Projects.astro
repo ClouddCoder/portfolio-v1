@@ -1,6 +1,7 @@
 ---
 import Ecommerce from "../assets/ecommerce.png";
 import Encriptador from "../assets/encriptador.png";
+import WeatherApp from "../assets/weather-app.png";
 ---
 
 <style>
@@ -9,7 +10,6 @@ import Encriptador from "../assets/encriptador.png";
     display: flex;
     flex-direction: column;
     gap: 20px;
-    max-width: 1000px;
   }
 
   h2 {
@@ -111,9 +111,9 @@ import Encriptador from "../assets/encriptador.png";
     }
 
     .project {
-      width: 50%;
-      max-height: 300px;
-      padding: 0.75rem;
+      width: 33.33%;
+      height: 200px;
+      padding: 5px;
     }
   }
 </style>
@@ -142,6 +142,17 @@ import Encriptador from "../assets/encriptador.png";
             href="https://clouddcoder.github.io/encriptador-alura/"
             target="_blank"
           >
+            Visit Website
+          </a>
+        </figurecaption>
+      </figure>
+    </div>
+    <div class="project">
+      <figure>
+        <img src={WeatherApp} alt="wheater app" />
+        <figurecaption>
+          <p class="caption">Weather App built with React using the OpenWeatherMap API.</p>
+          <a class="btn-visit-website" href="https://weather-app-fm3c.onrender.com" target="_blank">
             Visit Website
           </a>
         </figurecaption>
