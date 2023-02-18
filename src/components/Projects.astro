@@ -38,9 +38,15 @@ import WeatherApp from "../assets/weather-app.png";
   }
 
   img {
+    object-fit: cover;
     width: 100%;
     height: 100%;
     transition: all 0.45s ease-in-out;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
   }
 
   figurecaption {
@@ -50,7 +56,6 @@ import WeatherApp from "../assets/weather-app.png";
     opacity: 0;
     width: 100%;
     height: 100%;
-    padding: 0 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,6 +64,12 @@ import WeatherApp from "../assets/weather-app.png";
     background: var(--secondary-color);
     transition: all 0.45s ease-out;
     z-index: 1;
+  }
+
+  figurecaption p,
+  figurecaption span,
+  figurecaption a {
+    font-size: clamp(0.875rem, 2vw, 1.25rem);
   }
 
   figurecaption div {
@@ -77,6 +88,20 @@ import WeatherApp from "../assets/weather-app.png";
     text-align: center;
     color: var(--main-color);
     font-weight: 600;
+  }
+
+  .stack {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .stack span {
+    background: var(--main-color);
+    color: var(--secondary-color);
+    padding: 0.25rem 0.5rem;
+    border-radius: 10px;
   }
 
   .btn-visit-website {
@@ -111,8 +136,8 @@ import WeatherApp from "../assets/weather-app.png";
     }
 
     .project {
-      width: 33.33%;
-      height: 200px;
+      width: 50%;
+      height: 284px;
       padding: 5px;
     }
   }
@@ -125,7 +150,17 @@ import WeatherApp from "../assets/weather-app.png";
       <figure>
         <img src={Ecommerce} alt="ecommerce" />
         <figurecaption>
-          <p class="caption">Ecommerce built with the PERN stack and developed with Docker.</p>
+          <p class="caption">Ecommerce with authentication, cart and checkout</p>
+          <div class="stack">
+            <span>React</span>
+            <span>Node.js</span>
+            <span>Express</span>
+            <span>PostgreSQL</span>
+            <span>Docker</span>
+            <span>JWT</span>
+            <span>REST</span>
+            <span>MUI</span>
+          </div>
           <a class="btn-visit-website" href="https://lottus-shop.cf" target="_blank">
             Visit Website
           </a>
@@ -136,7 +171,12 @@ import WeatherApp from "../assets/weather-app.png";
       <figure>
         <img src={Encriptador} alt="encriptador" />
         <figurecaption>
-          <p class="caption">Encryptor built with HTML, CSS and JavaScript.</p>
+          <p class="caption">Basic Encryptor</p>
+          <div class="stack">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>JavaScript</span>
+          </div>
           <a
             class="btn-visit-website"
             href="https://clouddcoder.github.io/encriptador-alura/"
@@ -151,7 +191,13 @@ import WeatherApp from "../assets/weather-app.png";
       <figure>
         <img src={WeatherApp} alt="wheater app" />
         <figurecaption>
-          <p class="caption">Weather App built with React using the OpenWeatherMap API.</p>
+          <p class="caption">Weather App using the OpenWeatherMap API</p>
+          <div class="stack">
+            <span>React</span>
+            <span>JavaScript</span>
+            <span>CSS</span>
+            <span>Tailwind</span>
+          </div>
           <a class="btn-visit-website" href="https://weather-app-fm3c.onrender.com" target="_blank">
             Visit Website
           </a>
