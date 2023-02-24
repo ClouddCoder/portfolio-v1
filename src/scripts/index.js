@@ -23,16 +23,23 @@ window.onresize = function () {
 };
 
 // Scroll animation.
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    // intersectionRatio works better than isIntersecting, it avoids toggling the class multiple times.
-    if (entry.intersectionRatio > 0) {
-      entry.target.classList.add("show");
-    } else {
-      entry.target.classList.remove("show");
-    }
-  });
-});
+const observer = new IntersectionObserver(
+  // The entries is a list of the observed elements that have crossed the threshold.
+  (entries) => {
+    entries.forEach((entry) => {
+      // intersectionRatio works better than isIntersecting, it avoids toggling the class multiple times.
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  },
+  {
+    threshold: [0.5, 1],
+  },
+);
 
+// Declares what to observe, and observes its properties.
 const hiddenElements = document.querySelectorAll(".hidden");
 hiddenElements.forEach((el) => observer.observe(el));
