@@ -51,7 +51,7 @@ function Menu() {
             </li>
           </ul>
           <div>
-            <a href="./CV.pdf" className="button-resume">
+            <a href="./resume.pdf" className="button-resume">
               Resume
             </a>
           </div>
